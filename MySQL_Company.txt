@@ -1,0 +1,83 @@
+Q.2 MySQL Assignment
+
+create table Company(Company_Id int , Company_Name varchar(30), Company_City varchar(30));
+
+describe Company;
+
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Company_Id   | int         | YES  |     | NULL    |       |
+| Company_Name | varchar(30) | YES  |     | NULL    |       |
+| Company_City | varchar(30) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+insert into Company(Company_Id, Company_Name,  Company_City) values (1, 'Chuck', 'Boston'),(2,'Pizza Hut', 'San francisco'),(3,'Papa johns','san diego'),
+(4,'Ah pizz','Fremont'),(5,'Nini Pizza','Las Vegas'),(6,'Pizzaeria','Boston'),(7,'Dominos','Losangels');
+
+select * from Company;
+
++------------+--------------+---------------+
+| Company_Id | Company_Name | Company_City  |
++------------+--------------+---------------+
+|          1 | Chuck        | Boston        |
+|          2 | Pizza Hut    | San francisco |
+|          3 | Papa johns   | san diego     |
+|          4 | Ah pizz      | Fremont       |
+|          5 | Nini Pizza   | Las Vegas     |
+|          6 | Pizzaeria    | Boston        |
+|          7 | Dominos      | Losangels     |
+|          1 | Chuck        | Boston        |
+|          2 | Pizza Hut    | San francisco |
+|          3 | Papa johns   | san diego     |
+|          4 | Ah pizz      | Fremont       |
+|          5 | Nini Pizza   | Las Vegas     |
+|          6 | Pizzaeria    | Boston        |
+|          7 | Dominos      | Losangels     |
++------------+--------------+---------------+
+
+
+create table Items (Item_Id int, Item_Name varchar(20), Unit_Sold int);
+
+describe Items;
+
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Item_Id   | int         | YES  |     | NULL    |       |
+| Item_Name | varchar(20) | YES  |     | NULL    |       |
+| Unit_Sold | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+
+
+insert into Items (Item_Id, Item_Name , Unit_Sold) values (1,'Large Pizza',5),(2,'Garlic knots',6),(3,'Large Pizza',3),(4,'Medium Pizza',8),(5,'Breadsticks',7),(6,'Medium Pizza',11),(7,'Small Pizza',9),(8,'Small Pizza',6);
+
+select * from Items;
+
++---------+--------------+-----------+
+| Item_Id | Item_Name    | Unit_Sold |
++---------+--------------+-----------+
+|       1 | Large Pizza  |         5 |
+|       2 | Garlic knots |         6 |
+|       3 | Large Pizza  |         3 |
+|       4 | Medium Pizza |         8 |
+|       5 | Breadsticks  |         7 |
+|       6 | Medium Pizza |        11 |
+|       7 | Small Pizza  |         9 |
+|       8 | Small Pizza  |         6 |
++---------+--------------+-----------+
+
+select * from Items left join Company on Company.Company_Id=Items.Item_Id;
+
++---------+--------------+-----------+------------+--------------+---------------+
+| Item_Id | Item_Name    | Unit_Sold | Company_Id | Company_Name | Company_City  |
++---------+--------------+-----------+------------+--------------+---------------+
+|       1 | Large Pizza  |         5 |          1 | Chuck        | Boston        |
+|       2 | Garlic knots |         6 |          2 | Pizza Hut    | San francisco |
+|       3 | Large Pizza  |         3 |          3 | Papa johns   | san diego     |
+|       4 | Medium Pizza |         8 |          4 | Ah pizz      | Fremont       |
+|       5 | Breadsticks  |         7 |          5 | Nini Pizza   | Las Vegas     |
+|       6 | Medium Pizza |        11 |          6 | Pizzaeria    | Boston        |
+|       7 | Small Pizza  |         9 |          7 | Dominos      | Losangels     |
+|       8 | Small Pizza  |         6 |       NULL | NULL         | NULL          |
++---------+--------------+-----------+------------+--------------+---------------+

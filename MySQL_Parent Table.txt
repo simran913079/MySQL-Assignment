@@ -1,0 +1,142 @@
+1.	create a table named tblParents in Student schema, the Create table definition will be as following(minimum 20 entry is required )
+•	parent id
+•	parents name
+•	city
+•	age
+•	annual income
+•	occupation
+•	emailed
+
+
+create database Student;
+use database Student;
+
+CREATE TABLE TblParents(Parent_Id int PRIMARY KEY, Parent_Name varchar(40), City varchar(50), Age int, Annual_Income int, Occupation varchar(40),EMAil_Id varchar(60));
+
+describe TblParents;
+
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| Parent_Id     | int         | NO   | PRI | NULL    |       |
+| Parent_Name   | varchar(40) | YES  |     | NULL    |       |
+| City          | varchar(50) | YES  |     | NULL    |       |
+| Age           | int         | YES  |     | NULL    |       |
+| Annual_Income | int         | YES  |     | NULL    |       |
+| Occupation    | varchar(40) | YES  |     | NULL    |       |
+| EMAil_Id      | varchar(60) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+ select * from TblParents;
+
++-----------+--------------------+------------+------+---------------+---------------------+-----------------------------+
+| Parent_Id | Parent_Name        | City       | Age  | Annual_Income | Occupation          | EMAil_Id                    |
++-----------+--------------------+------------+------+---------------+---------------------+-----------------------------+
+|         1 | Shantanu Sharma    | Delhi      |   50 |        900000 | Professor           | ssharma97@gmail.com         |
+|         2 | John Rubin         | Washington |   49 |       1200000 | Business Man        | rubinj50@gmail.com          |
+|         3 | William Shakespeer | Paris      |   52 |        600000 | Professor           | shakespeer1234@gmail.com    |
+|         4 | John  Smith        | London     |   55 |        700000 | Business            | smithjohn89@gmail.com       |
+|         5 | Robert Hokings     | Paris      |   49 |        800000 | Professor           | hokings55robert@gmail.com   |
+|         6 | Swaraj Sinha       | Delhi      |   50 |        900000 | Engineer            | sinhaswa097@gmail.com       |
+|         7 | Jolly Rubin        | Ahmedabad  |   49 |       1800000 | Doctor              | rubinj50@gmail.com          |
+|         8 | James Jones        | New York   |   52 |        500000 | Teacher             | jamijones234jones@gmail.com |
+|         9 | Linqa  Johnson     | Chennai    |   55 |        700000 | Engineer            | johnsonsl89@gmail.com       |
+|        10 | Robert Hook        | Paris      |   49 |        400000 | Professor           | hook55robert@gmail.com      |
+|        11 | Mary Hanes         | Delhi      |   50 |        900000 | Professor           | hanesmary097@gmail.com      |
+|        12 | Jaffery Rubin      | Banglore   |   49 |       1200000 | Business Man        | rubinjaffery50@gmail.com    |
+|        13 | Jamie Jones        | Kolkatta   |   52 |        600000 | Teacher             | jamie234jones@gmail.com     |
+|        14 | Linda  Foster      | Chennai    |   55 |        700000 | Business            | fosterlinda89@gmail.com     |
+|        15 | Robert Redmond     | Ahmedabad  |   49 |        800000 | Professor           | redmond55robert@gmail.com   |
+|        16 | Ramesh Jadhav      | Pune       |   50 |       1900000 | Governemnt Employee | ramjadhav56@gmail.com       |
+|        17 | Jacklin Sharma     | Mumbai     |   49 |        800000 | Business Woman      | jacklin5055@gmail.com       |
+|        18 | Mahesh Sharma      | Kolkatta   |   52 |        600000 | Doctor              | sharmamahesh99@gmail.com    |
+|        19 | Aman Khan          | Heyderabad |   55 |        550000 | Engineer            | khanaman809@gmail.com       |
+|        20 | Rohit Malhotra     | Patna      |   49 |        800000 | Professor           | malhotrarohit455@gmail.com  |
++-----------+--------------------+------------+------+---------------+---------------------+-----------------------------+
+
+2.	update email id of each parents as “NA”.
+
+update TblParents set EMail_Id='NA';
+
+select * from TblParents;
+
++-----------+--------------------+------------+------+---------------+---------------------+----------+
+| Parent_Id | Parent_Name        | City       | Age  | Annual_Income | Occupation          | EMAil_Id |
++-----------+--------------------+------------+------+---------------+---------------------+----------+
+|         1 | Shantanu Sharma    | Delhi      |   50 |        900000 | Professor           | NA       |
+|         2 | John Rubin         | Washington |   49 |       1200000 | Business Man        | NA       |
+|         3 | William Shakespeer | Paris      |   52 |        600000 | Professor           | NA       |
+|         4 | John  Smith        | London     |   55 |        700000 | Business            | NA       |
+|         5 | Robert Hokings     | Paris      |   49 |        800000 | Professor           | NA       |
+|         6 | Swaraj Sinha       | Delhi      |   50 |        900000 | Engineer            | NA       |
+|         7 | Jolly Rubin        | Ahmedabad  |   49 |       1800000 | Doctor              | NA       |
+|         8 | James Jones        | New York   |   52 |        500000 | Teacher             | NA       |
+|         9 | Linqa  Johnson     | Chennai    |   55 |        700000 | Engineer            | NA       |
+|        10 | Robert Hook        | Paris      |   49 |        400000 | Professor           | NA       |
+|        11 | Mary Hanes         | Delhi      |   50 |        900000 | Professor           | NA       |
+|        12 | Jaffery Rubin      | Banglore   |   49 |       1200000 | Business Man        | NA       |
+|        13 | Jamie Jones        | Kolkatta   |   52 |        600000 | Teacher             | NA       |
+|        14 | Linda  Foster      | Chennai    |   55 |        700000 | Business            | NA       |
+|        15 | Robert Redmond     | Ahmedabad  |   49 |        800000 | Professor           | NA       |
+|        16 | Ramesh Jadhav      | Pune       |   50 |       1900000 | Governemnt Employee | NA       |
+|        17 | Jacklin Sharma     | Mumbai     |   49 |        800000 | Business Woman      | NA       |
+|        18 | Mahesh Sharma      | Kolkatta   |   52 |        600000 | Doctor              | NA       |
+|        19 | Aman Khan          | Heyderabad |   55 |        550000 | Engineer            | NA       |
+|        20 | Rohit Malhotra     | Patna      |   49 |        800000 | Professor           | NA       |
++-----------+--------------------+------------+------+---------------+---------------------+----------+
+
+3.count number of parents whose annual income is more than 6 lakhs.
+
+select count(Annual_Income) from TblParents where Annual_Income>600000;
+
++----------------------+
+| count(Annual_Income) |
++----------------------+
+|                   14 |
++----------------------+
+
+
+4.Select parents who are living in city Ahmedabad, Delhi, Mumbai, Chennai, Banglore.
+
+select * from TblParents where City='Ahmedabad' or  City='Delhi' or City= 'Mumbai' or City= 'Chennai' or City= 'Banglore';
+
++-----------+-----------------+-----------+------+---------------+----------------+----------+
+| Parent_Id | Parent_Name     | City      | Age  | Annual_Income | Occupation     | EMAil_Id |
++-----------+-----------------+-----------+------+---------------+----------------+----------+
+|         1 | Shantanu Sharma | Delhi     |   50 |        900000 | Professor      | NA       |
+|         6 | Swaraj Sinha    | Delhi     |   50 |        900000 | Engineer       | NA       |
+|         7 | Jolly Rubin     | Ahmedabad |   49 |       1800000 | Doctor         | NA       |
+|         9 | Linqa  Johnson  | Chennai   |   55 |        700000 | Engineer       | NA       |
+|        11 | Mary Hanes      | Delhi     |   50 |        900000 | Professor      | NA       |
+|        12 | Jaffery Rubin   | Banglore  |   49 |       1200000 | Business Man   | NA       |
+|        14 | Linda  Foster   | Chennai   |   55 |        700000 | Business       | NA       |
+|        15 | Robert Redmond  | Ahmedabad |   49 |        800000 | Professor      | NA       |
+|        17 | Jacklin Sharma  | Mumbai    |   49 |        800000 | Business Woman | NA       |
++-----------+-----------------+-----------+------+---------------+----------------+----------+
+
+5.Write a SQL statement to select parent whose annual income is less than 5 lakhs otherwise age is more than 45.
+
+select * from TblParents where Annual_Income<500000;
+
++-----------+-------------+-------+------+---------------+------------+----------+
+| Parent_Id | Parent_Name | City  | Age  | Annual_Income | Occupation | EMAil_Id |
++-----------+-------------+-------+------+---------------+------------+----------+
+|        10 | Robert Hook | Paris |   49 |        400000 | Professor  | NA       |
++-----------+-------------+-------+------+---------------+------------+----------+
+
+
+
+6.Create student table with studentid, student name, Maths, science marks, parent id here parent id is foreign key and make connected with parents table using primary key & foreign key
+
+create table Students(Student_Id int PRIMARY KEY, Student_Name varchar(30), Maths_Marks int, Science_Marks int,Parent_Id int, FOREIGN KEY (Parent_Id) REFERENCES TblParents(Parent_Id));
+
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| Student_Id    | int         | NO   | PRI | NULL    |       |
+| Student_Name  | varchar(30) | YES  |     | NULL    |       |
+| Maths_Marks   | int         | YES  |     | NULL    |       |
+| Science_Marks | int         | YES  |     | NULL    |       |
+| Parent_Id     | int         | YES  | MUL | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
